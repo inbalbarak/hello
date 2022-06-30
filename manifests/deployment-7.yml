@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aksdemo-f675"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aksdemo-f675"
+  template:
+    metadata:
+      labels:
+        app: "aksdemo-f675"
+    spec:
+      containers:
+        - name: "aksdemo-f675"
+          image: "arcdemo231.azurecr.io/aksdemo"
+          ports:
+          - containerPort: 80
